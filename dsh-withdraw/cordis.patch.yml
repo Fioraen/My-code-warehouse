@@ -1,0 +1,7 @@
+- insert:
+    - id: dsh-withdraw
+      name: 'dsh-withdraw'
+      # 修改 / 撤回已经发出的消息。
+      # 改写走 Session 的 surface replace：把「目标用户消息 ~ 当前最后一条 surface 节点」
+      # 整段替换成一条说明节点，因此该消息之后的内容一并被清除。
+      # 修改会再用 agent.followup() 把新内容补回去并继续生成；撤回不再续跑。
